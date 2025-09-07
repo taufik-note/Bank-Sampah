@@ -32,7 +32,7 @@ git clone https://github.com/taufik-note/Bank-Sampah.git
 cd Bank-Sampah
 
 2. Install dependensi:
-composer install
+- ```composer install```
 npm install
 npm run dev
 
