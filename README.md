@@ -20,7 +20,7 @@ Aplikasi ini dibangun dengan Laravel Framework sebagai backend dan Bootstrap 5 u
 - `transactions`: mencatat transaksi sampah per user.
   
 ## Diagram Hubungan Entitas (ERD) singkat:
-users
+- users
 - |--< transactions
 - drop_points
 - |--< transactions
