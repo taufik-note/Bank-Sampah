@@ -8,7 +8,7 @@ Bank Sampah adalah aplikasi web yang dirancang untuk mengelola dan memonitor akt
 - Pencatatan transaksi penyetoran dan penarikan sampah secara digital.
 - Monitoring lokasi drop points sampah.
 - Dashboard interaktif dengan laporan realtime.
-- Autentikasi user dengan role user biasa dan guest.
+- Autentikasi user dengan role user.
 - Responsive UI berbasis Bootstrap 5.
 - Logout dan proteksi akses dengan Laravel Breeze authentication.
 
