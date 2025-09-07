@@ -21,9 +21,9 @@ Aplikasi ini dibangun dengan Laravel Framework sebagai backend dan Bootstrap 5 u
   
 ## Diagram Hubungan Entitas (ERD) singkat:
 users
-|--< transactions
-drop_points
-|--< transactions
+- |--< transactions
+- drop_points
+- |--< transactions
 
 ## Cara Menjalankan Lokal
 
