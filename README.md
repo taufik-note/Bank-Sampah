@@ -28,23 +28,23 @@ drop_points
 ## Cara Menjalankan Lokal
 
 1. Clone repository:
-git clone https://github.com/taufik-note/Bank-Sampah.git
-cd Bank-Sampah
+- ```git clone https://github.com/taufik-note/Bank-Sampah.git```
+- ```cd Bank-Sampah```
 
 2. Install dependensi:
 - ```composer install```
-npm install
-npm run dev
+- ```npm install```
+- ```npm run dev```
 
 3. Konfigurasi environment:
-cp .env.example .env
-php artisan key:generate
+- ```cp .env.example .env```
+- ```php artisan key:generate```
 
 4. Migrasi database:
-php artisan migrate
+- ```php artisan migrate```
 
 5. Jalankan server lokal:
-php artisan serve
+- ```php artisan serve```
 
 6. Gunakan akun demo atau register user baru untuk login. Untuk akses cepat, gunakan fitur Guest Login.
 
