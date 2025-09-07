@@ -1,61 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Bank Sampah - Sistem Monitoring dan Manajemen Sampah Terintegrasi
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Deskripsi Singkat
+Bank Sampah adalah aplikasi web yang dirancang untuk mengelola dan memonitor aktivitas pengumpulan sampah secara terpusat. Aplikasi ini membantu petugas dan pengelola bank sampah dalam pencatatan transaksi, pengelolaan drop points, dan pemantauan status nasabah secara real-time untuk mendukung pengelolaan lingkungan yang lebih baik.
 
-## About Laravel
+## Fitur Utama
+- Manajemen data nasabah bank sampah.
+- Pencatatan transaksi penyetoran dan penarikan sampah secara digital.
+- Monitoring lokasi drop points sampah.
+- Dashboard interaktif dengan laporan realtime.
+- Autentikasi user dengan role user biasa dan guest.
+- Responsive UI berbasis Bootstrap 5.
+- Logout dan proteksi akses dengan Laravel Breeze authentication.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Arsitektur Singkat
+Aplikasi ini dibangun dengan Laravel Framework sebagai backend dan Bootstrap 5 untuk frontend. Database menggunakan MySQL dengan tabel utama seperti:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- `users`: menyimpan data user dan guest.
+- `drop_points`: menyimpan lokasi penampungan sampah.
+- `transactions`: mencatat transaksi sampah per user.
+  
+## Diagram Hubungan Entitas (ERD) singkat:
+users
+|--< transactions
+drop_points
+|--< transactions
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Cara Menjalankan Lokal
 
-## Learning Laravel
+1. Clone repository:
+git clone https://github.com/taufik-note/Bank-Sampah.git
+cd Bank-Sampah
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Install dependensi:
+composer install
+npm install
+npm run dev
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. Konfigurasi environment:
+cp .env.example .env
+php artisan key:generate
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Migrasi database:
+php artisan migrate
 
-## Laravel Sponsors
+5. Jalankan server lokal:
+php artisan serve
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+6. Gunakan akun demo atau register user baru untuk login. Untuk akses cepat, gunakan fitur Guest Login.
 
-### Premium Partners
+## Tangkapan Layar / Demo
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+![Dashboard](screenshots/dashboard.png)  
+*Dashboard utama monitoring transaksi dan drop points.*
 
-## Contributing
+![Transaksi Sampah](screenshots/transactions.png)  
+*Form input dan riwayat transaksi nasabah.*
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![Drop Point](screenshots/drop-point.png)  
+*Form input lokasi drop.*
 
-## Code of Conduct
+## Keputusan Teknis & Alasan
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Laravel Framework digunakan untuk kestabilan, keamanan, dan kemudahan pengembangan backend.
+- Bootstrap 5 dipilih untuk tampilan responsif dan cepat.
+- MySQL sebagai basis data yang populer dan andal.
+- Laravel Breeze untuk autentikasi yang ringan dan mudah dikustomisasi.
+- Guest Login mempercepat akses demo tanpa perlu registrasi penuh.
 
-## Security Vulnerabilities
+## Sumber Data / API
+Aplikasi ini menggunakan data internal tanpa integrasi API eksternal. Data transaksi dan pengguna dikelola penuh di database lokal.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
